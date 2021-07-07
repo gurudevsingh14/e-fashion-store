@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="undefined" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" integrity="sha512-OdEXQYCOldjqUEsuMKsZRj93Ht23QRlhIb8E/X0sbwZhme8eUw6g8q7AdxGJKakcBbv7+/PX0Gc2btf7Ru8cZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div>
+        <ul class="toolbar" >
+            <li class="search" style="font-size: 0px;">
+                <input type="text">
+                <input type="button" value="Search">
+            </li>
+            <li class="options">
+                <a href="cart.php" class="cart">
+                    <!-- <li>Sign In</li>
+                    <li><i id="signlogo" class="fas fa-user-circle"></i></li> -->
+                    <p>Cart &nbsp;</p><i class="fas fa-shopping-cart"></i>
+                    </a>
+                <a href="login.php"  class="signin">
+                   <p>Sign In &nbsp;</p><i id="signlogo" class="fas fa-user-circle"></i>
+                </a>
+                </p>
+            </li>
+        </ul>
+    </div>
+    <!------------------catergory-------------------->
+    <div class="menu">
+        <ul class="menubar">
+            <li>Best Sellers</li>
+            <li >Men's
+                <ul>
+                    <li>
+                        <a href="card.php">footware</a>
+                        <ul>
+                            <li>casual shoes
+                                <ul>
+                                    <li>puma</li>
+                                    <li>nike</li>
+                                </ul>
+                            </li>
+                            <li>Sports shoes</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Clothing</p>
+                    </li>
+                    <li>
+                        <p>Grooming</p>
+                    </li>
+                </ul>
+            </li>
+            <li>Fashion</li>
+            <li>Electronics</li>
+            <li>New Releases</li>
+            <li>Computers</li>
+        </ul>
+    </div>
+    <!--------------------------banner---------------------->
+    <div class="slider">
+      <div class="slide active">
+        <img src="https://visme.co/blog/wp-content/uploads/2017/04/Styled-youtube-banner-template-channel-art-fashion-tips-accesories-beauty-clothes-blog.png" alt="">
+        <div class="info">
+          <h2>Style</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="https://computervillage.ng/media/wysiwyg/slider-home/computer_village_2019_new_website_banner_2-min.jpg" alt="">
+        <div class="info">
+          <h2>Computers</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="https://assets.ajio.com/medias/sys_master/images/images/h15/hb8/31254775005214/Ajio-SS21-BANNERS-1024x672px-03.jpg" alt="">
+        <div class="info">
+          <h2>Women corner</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="https://i.pinimg.com/originals/e4/02/b7/e402b77ddad66e99db60b0abe5ca4755.png" alt="">
+        <div class="info">
+          <h2>Trends</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/home-appliances-flash-sale-flyer-design-template-4dcf85e811b95ad257d1d840aba415e1_screen.jpg?ts=1599738514" alt="">
+        <div class="info">
+		<h2>Appliances</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+      <div class="navigation">
+        <i class="fas fa-chevron-left prev-btn"></i>
+        <i class="fas fa-chevron-right next-btn"></i>
+      </div>
+      <div class="navigation-visibility">
+        <div class="slide-icon active"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+        <div class="slide-icon"></div>
+      </div>
+    </div>
+      <script type="text/javascript">
+    const slider = document.querySelector(".slider");
+    const nextBtn = document.querySelector(".next-btn");
+    const prevBtn = document.querySelector(".prev-btn");
+    const slides = document.querySelectorAll(".slide");
+    const slideIcons = document.querySelectorAll(".slide-icon");
+    const numberOfSlides = slides.length;
+    var slideNumber = 0;
+
+    //image slider next button
+    nextBtn.addEventListener("click", () => {
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+      slideIcons.forEach((slideIcon) => {
+        slideIcon.classList.remove("active");
+      });
+
+      slideNumber++;
+
+      if(slideNumber > (numberOfSlides - 1)){
+        slideNumber = 0;
+      }
+
+      slides[slideNumber].classList.add("active");
+      slideIcons[slideNumber].classList.add("active");
+    });
+
+    //image slider previous button
+    prevBtn.addEventListener("click", () => {
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+      slideIcons.forEach((slideIcon) => {
+        slideIcon.classList.remove("active");
+      });
+
+      slideNumber--;
+
+      if(slideNumber < 0){
+        slideNumber = numberOfSlides - 1;
+      }
+
+      slides[slideNumber].classList.add("active");
+      slideIcons[slideNumber].classList.add("active");
+    });
+
+    //image slider autoplay
+    var playSlider;
+
+    var repeater = () => {
+      playSlider = setInterval(function(){
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+        slideIcons.forEach((slideIcon) => {
+          slideIcon.classList.remove("active");
+        });
+
+        slideNumber++;
+
+        if(slideNumber > (numberOfSlides - 1)){
+          slideNumber = 0;
+        }
+
+        slides[slideNumber].classList.add("active");
+        slideIcons[slideNumber].classList.add("active");
+      }, 4000);
+    }
+    repeater();
+
+    //stop the image slider autoplay on mouseover
+    slider.addEventListener("mouseover", () => {
+      clearInterval(playSlider);
+    });
+
+    //start the image slider autoplay again on mouseout
+    slider.addEventListener("mouseout", () => {
+      repeater();
+    });
+    </script>
+</body>
+</html>
