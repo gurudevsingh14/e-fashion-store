@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
@@ -12,15 +13,44 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="undefined" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" integrity="sha512-OdEXQYCOldjqUEsuMKsZRj93Ht23QRlhIb8E/X0sbwZhme8eUw6g8q7AdxGJKakcBbv7+/PX0Gc2btf7Ru8cZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+   
+  </head>
 <body>
     <div>
         <ul class="toolbar" >
-            <li class="search" style="font-size: 0px;">
+            <!-- <li class="search" style="font-size: 0px;">
                 <input type="text">
                 <input type="button" value="Search">
-            </li>
+            </li> -->
             <li class="options">
+              <!-- <div class="menu">
+                <ul> -->
+                  <li class="expand"><div class="cart"><p>MEN &nbsp;</p><i class="fas fa-caret-down"></i></div>
+                    <ul>
+                      <li>
+                          <a href="card.php">footware</a>
+                          <ul>
+                            <li>casual shoes
+                                <ul>
+                                    <li>puma</li>
+                                    <li>nike</li>
+                                </ul>
+                            </li>
+                            <li>Sports shoes</li>
+                        </ul>
+                      </li>
+                      <li>
+                          <p>Clothing</p>
+                      </li>
+                      <li>
+                          <p>Grooming</p>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="expand"><div class="cart"><p>WOMEN &nbsp;</p><i class="fas fa-caret-down"></i></div></li>
+                  <li class="expand"><div class="cart"><p>KIDS &nbsp;</p><i class="fas fa-caret-down"></i></div></li>
+                  <!-- </ul>
+              </div> -->
                 <a href="cart.php" class="cart">
                     <!-- <li>Sign In</li>
                     <li><i id="signlogo" class="fas fa-user-circle"></i></li> -->
@@ -33,8 +63,9 @@
             </li>
         </ul>
     </div>
+    <!-- <br><br><br> -->
     <!------------------catergory-------------------->
-    <div class="menu">
+    <!-- <div class="menu">
         <ul class="menubar">
             <li>Best Sellers</li>
             <li >Men's
@@ -64,7 +95,7 @@
             <li>New Releases</li>
             <li>Computers</li>
         </ul>
-    </div>
+    </div> -->
     <!--------------------------banner---------------------->
     <div class="slider">
       <div class="slide active">
@@ -195,5 +226,103 @@
       repeater();
     });
     </script>
+
+    <br><br>
+    <!---------------------------------deal of the day----------------------------------------->
+<!--     
+    <div style="height: 100px;overflow: hidden;" >
+      <div class="product">
+        <img src="https://m.media-amazon.com/images/I/81qJVGnpTTL._AC_UL320_.jpg">
+        <div class="product-info">
+        <h2>puma</h2><br>
+        <h3 class="product-name">running shoes</h3>
+        <h4 class="product-price">Price: &nbsp; 2200</h4>
+        <br>
+        <p class="product-remove" style="right:160px;">
+            
+            <span class="remove">Add to cart</span>
+        </p>
+        <p class="product-remove" style="background-color:orange;">
+         
+            <span class="remove">Buy Now</span>
+        </p>
+        </div>
+        <div class="product">
+          <img src="https://m.media-amazon.com/images/I/81qJVGnpTTL._AC_UL320_.jpg">
+          <div class="product-info">
+          <h2>puma</h2><br>
+          <h3 class="product-name">running shoes</h3>
+          <h4 class="product-price">Price: &nbsp; 2200</h4>
+          <br>
+          <p class="product-remove" style="right:160px;">
+              
+              <span class="remove">Add to cart</span>
+          </p>
+          <p class="product-remove" style="background-color:orange;">
+           
+              <span class="remove">Buy Now</span>
+          </p>
+          </div>
+          <div class="product">
+            <img src="https://m.media-amazon.com/images/I/81qJVGnpTTL._AC_UL320_.jpg">
+            <div class="product-info">
+            <h2>puma</h2><br>
+            <h3 class="product-name">running shoes</h3>
+            <h4 class="product-price">Price: &nbsp; 2200</h4>
+            <br>
+            <p class="product-remove" style="right:160px;">
+                
+                <span class="remove">Add to cart</span>
+            </p>
+            <p class="product-remove" style="background-color:orange;">
+             
+                <span class="remove">Buy Now</span>
+            </p>
+            </div>
+            <div class="product">
+              <img src="https://m.media-amazon.com/images/I/81qJVGnpTTL._AC_UL320_.jpg">
+              <div class="product-info">
+              <h2>puma</h2><br>
+              <h3 class="product-name">running shoes</h3>
+              <h4 class="product-price">Price: &nbsp; 2200</h4>
+              <br>
+              <p class="product-remove" style="right:160px;">
+                  
+                  <span class="remove">Add to cart</span>
+              </p>
+              <p class="product-remove" style="background-color:orange;">
+               
+                  <span class="remove">Buy Now</span>
+              </p>
+              </div>
+              <div class="product">
+                <img src="https://m.media-amazon.com/images/I/81qJVGnpTTL._AC_UL320_.jpg">
+                <div class="product-info">
+                <h2>puma</h2><br>
+                <h3 class="product-name">running shoes</h3>
+                <h4 class="product-price">Price: &nbsp; 2200</h4>
+                <br>
+                <p class="product-remove" style="right:160px;">
+                    
+                    <span class="remove">Add to cart</span>
+                </p>
+                <p class="product-remove" style="background-color:orange;">
+                 
+                    <span class="remove">Buy Now</span>
+                </p>
+                </div> -->
+        <!-- <div class="card">
+          <img class="card-img-top" src="https://m.media-amazon.com/images/I/81qJVGnpTTL._AC_UL320_.jpg" alt="Card image">
+          <div class="card-body">
+            <h4 class="card-title">John Doe</h4>
+            <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+            <a href="#" class="btn btn-primary" style="background: green;border: none;">Add to cart</a>
+            <a href="#" class="btn btn-primary" style="background: rgb(255, 115, 0);border: none;position: absolute;right: 0;">Buy now</a>
+          </div>
+        </div> -->
+        
+        
+    <!-- </div> -->
+    
 </body>
 </html>

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Shopping Cart</title>
+	<title>Shopping card</title>
 	<link rel="stylesheet" type="text/css" href="cart.css">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <div class="container">
-	<h1>Shopping Cart</h1>
-	<div class="cart">
+	<h1>Shopping card</h1>
+	<div class="card">
 		<div class="products">
 			<div class="product">
 				<img src="img/shoe.jpg">
@@ -37,7 +37,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="cart-total">
+		<div class="card-total">
 			<p>
 				<span>Total Price</span>
 				<span>₹ 3,000</span>
