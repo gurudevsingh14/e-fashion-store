@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>e-fashion store</title>
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,9 +56,28 @@
                     <li><i id="signlogo" class="fas fa-user-circle"></i></li> -->
                     <p>Cart &nbsp;</p><i class="fas fa-shopping-cart"></i>
                     </a>
+                <li class="logout" style="display:block;">
                 <a href="login.php"  class="signin">
-                   <p>Sign In &nbsp;</p><i id="signlogo" class="fas fa-user-circle"></i>
-                </a>
+                   <p id="profilename">
+                     <?php 
+                     include 'config.php';
+                     session_start();
+                     error_reporting(0);
+                     if (isset($_SESSION['username'])) {
+		                  echo $_SESSION['username'];?>
+                      <style>
+                        .logout:hover > #logout{
+                          display:block;
+                        }
+                      </style><?php
+                      }
+                      else {
+                        echo "Login";
+                      }?>&nbsp;</p><i id="signlogo" class="fas fa-user-circle"></i>
+                  </a>
+                  <a href="logout.php" id="logout" style="position:absolute;z-index:900;right:306px;margin-top:4px;background:black;color:black;padding:10px 55px 10px 51px;">
+                  Logout &nbsp; <i class="fas fa-sign-out-alt"></i></a>
+                  </li>
                 </p>
             </li>
         </ul>
@@ -106,9 +125,9 @@
         </div>
       </div>
       <div class="slide">
-        <img src="https://computervillage.ng/media/wysiwyg/slider-home/computer_village_2019_new_website_banner_2-min.jpg" alt="">
+        <img src="https://s3.envato.com/files/168119903/BEE-1096-Fashion%20Banners_01_preview4.jpg" alt="">
         <div class="info">
-          <h2>Computers</h2>
+          <h2>Sale</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
       </div>
@@ -127,9 +146,9 @@
         </div>
       </div>
       <div class="slide">
-        <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/home-appliances-flash-sale-flyer-design-template-4dcf85e811b95ad257d1d840aba415e1_screen.jpg?ts=1599738514" alt="">
+        <img src="https://m.media-amazon.com/images/S/abs-image-upload-na/f/AmazonStores/A21TJRUUN4KGV/4c1ab10e221e0a4b07ac7c09dda46e2c.w920.h420.jpg" alt="">
         <div class="info">
-		<h2>Appliances</h2>
+		<h2>Men's Corner</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
       </div>
@@ -229,100 +248,108 @@
 
     <br><br>
     <!---------------------------------deal of the day----------------------------------------->
-<!--     
-    <div style="height: 100px;overflow: hidden;" >
-      <div class="product">
-        <img src="https://m.media-amazon.com/images/I/81qJVGnpTTL._AC_UL320_.jpg">
-        <div class="product-info">
-        <h2>puma</h2><br>
-        <h3 class="product-name">running shoes</h3>
-        <h4 class="product-price">Price: &nbsp; 2200</h4>
-        <br>
-        <p class="product-remove" style="right:160px;">
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css"
+    />
+    <link rel="stylesheet" href="carousel.css" />
+    <link rel="stylesheet" type="text/css" href="cart.css">
+    <div class="carousel-wrap">
+    <h1>Deals of the day</h1>
+      <div class="owl-carousel">
+      <?php 
+            require 'config.php';
+            $query="SELECT * FROM shoes WHERE discount>=50 ORDER BY discount DESC";       
+            $query_run= mysqli_query($conn,$query);
+            $check= mysqli_num_rows($query_run)>0;
+            if($check)
+            {   
+               while($row= mysqli_fetch_assoc($query_run))
+               {
+                    ?>
+                    <div class="product" style="min-height:420px;">
+                        <img src="<?php echo $row['image'];?>">
+                        <div class="product-info" style="display:flex;flex-direction: column;justify-content: space-between;">
+                        <h2 style="height: 30px;overflow: hidden;"><?php echo $row['brand'];?></h2><br>
+                        <h3 class="product-name" style="height: 45px;overflow: hidden;"><?php echo $row['name'];?></h3>
+                        <h4 class="product-price">Price: &nbsp; <?php echo $row['price'];?></h4>
+                        <br>
+                        <p class="product-remove" style="right:145px;bottom:0px;">
+                            
+                            <span id="addtocart" class="remove">Add to cart</span>
+                            
+                        </p>
+                        <p class="product-remove" style="background-color:orange;bottom:0px;">
+                         
+                            <span class="remove">Buy Now</span>
+                        </p>
+                        </div>
+                    </div>
+                    <?php
+               }
             
-            <span class="remove">Add to cart</span>
-        </p>
-        <p class="product-remove" style="background-color:orange;">
-         
-            <span class="remove">Buy Now</span>
-        </p>
-        </div>
-        <div class="product">
-          <img src="https://m.media-amazon.com/images/I/81qJVGnpTTL._AC_UL320_.jpg">
-          <div class="product-info">
-          <h2>puma</h2><br>
-          <h3 class="product-name">running shoes</h3>
-          <h4 class="product-price">Price: &nbsp; 2200</h4>
-          <br>
-          <p class="product-remove" style="right:160px;">
-              
-              <span class="remove">Add to cart</span>
-          </p>
-          <p class="product-remove" style="background-color:orange;">
-           
-              <span class="remove">Buy Now</span>
-          </p>
-          </div>
-          <div class="product">
-            <img src="https://m.media-amazon.com/images/I/81qJVGnpTTL._AC_UL320_.jpg">
-            <div class="product-info">
-            <h2>puma</h2><br>
-            <h3 class="product-name">running shoes</h3>
-            <h4 class="product-price">Price: &nbsp; 2200</h4>
-            <br>
-            <p class="product-remove" style="right:160px;">
-                
-                <span class="remove">Add to cart</span>
-            </p>
-            <p class="product-remove" style="background-color:orange;">
-             
-                <span class="remove">Buy Now</span>
-            </p>
-            </div>
-            <div class="product">
-              <img src="https://m.media-amazon.com/images/I/81qJVGnpTTL._AC_UL320_.jpg">
-              <div class="product-info">
-              <h2>puma</h2><br>
-              <h3 class="product-name">running shoes</h3>
-              <h4 class="product-price">Price: &nbsp; 2200</h4>
-              <br>
-              <p class="product-remove" style="right:160px;">
-                  
-                  <span class="remove">Add to cart</span>
-              </p>
-              <p class="product-remove" style="background-color:orange;">
-               
-                  <span class="remove">Buy Now</span>
-              </p>
-              </div>
-              <div class="product">
-                <img src="https://m.media-amazon.com/images/I/81qJVGnpTTL._AC_UL320_.jpg">
-                <div class="product-info">
-                <h2>puma</h2><br>
-                <h3 class="product-name">running shoes</h3>
-                <h4 class="product-price">Price: &nbsp; 2200</h4>
-                <br>
-                <p class="product-remove" style="right:160px;">
-                    
-                    <span class="remove">Add to cart</span>
-                </p>
-                <p class="product-remove" style="background-color:orange;">
-                 
-                    <span class="remove">Buy Now</span>
-                </p>
-                </div> -->
-        <!-- <div class="card">
-          <img class="card-img-top" src="https://m.media-amazon.com/images/I/81qJVGnpTTL._AC_UL320_.jpg" alt="Card image">
-          <div class="card-body">
-            <h4 class="card-title">John Doe</h4>
-            <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-            <a href="#" class="btn btn-primary" style="background: green;border: none;">Add to cart</a>
-            <a href="#" class="btn btn-primary" style="background: rgb(255, 115, 0);border: none;position: absolute;right: 0;">Buy now</a>
-          </div>
-        </div> -->
-        
-        
-    <!-- </div> -->
+            }else{
+
+            }
+            
+            ?>
+      </div>
+    </div>
+
+    <br><br>
+    <!---------------------------------Trending----------------------------------------->
+
+    <div class="carousel-wrap">
+    <h1>Trending</h1>
+      <div class="owl-carousel">
+      <?php 
+            require 'config.php';
+            $query="SELECT * FROM shoes WHERE popularity>=4 ORDER BY popularity DESC";       
+            $query_run= mysqli_query($conn,$query);
+            $check= mysqli_num_rows($query_run)>0;
+            if($check)
+            {   
+               while($row= mysqli_fetch_assoc($query_run))
+               {
+                    ?>
+                    <div class="product" style="min-height:420px;">
+                        <img src="<?php echo $row['image'];?>">
+                        <div class="product-info" style="display:flex;flex-direction: column;justify-content: space-between;">
+                        <h2 style="height: 30px;overflow: hidden;"><?php echo $row['brand'];?></h2><br>
+                        <h3 class="product-name" style="height: 45px;overflow: hidden;"><?php echo $row['name'];?></h3>
+                        <h4 class="product-price">Price: &nbsp; <?php echo $row['price'];?></h4>
+                        <br>
+                        <p class="product-remove" style="right:145px;bottom:0px;">
+                            
+                            <span id="addtocart" class="remove">Add to cart</span>
+                            
+                        </p>
+                        <p class="product-remove" style="background-color:orange;bottom:0px;">
+                         
+                            <span class="remove">Buy Now</span>
+                        </p>
+                        </div>
+                    </div>
+                    <?php
+               }
+            
+            }else{
+
+            }
+            
+            ?>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/owl.carousel.min.js"></script>
+    <script src="https://use.fontawesome.com/826a7e3dce.js"></script>
+    <script src="./script.js"></script>
+
     
 </body>
 </html>

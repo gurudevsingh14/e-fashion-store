@@ -8,57 +8,11 @@
     <title>products</title>
     </head>
     <body>
-    <div>
-        <ul class="toolbar" >
-            <!-- <li class="search" style="font-size: 0px;">
-                <input type="text">
-                <input type="button" value="Search">
-            </li> -->
-            <li class="options">
-              <!-- <div class="menu">
-                <ul> -->
-                  <li class="expand"><div class="cart"><p>MEN &nbsp;</p><i class="fas fa-caret-down"></i></div>
-                    <ul>
-                      <li>
-                          <a href="card.php">footware</a>
-                          <ul>
-                            <li>casual shoes
-                                <ul>
-                                    <li>puma</li>
-                                    <li>nike</li>
-                                </ul>
-                            </li>
-                            <li>Sports shoes</li>
-                        </ul>
-                      </li>
-                      <li>
-                          <p>Clothing</p>
-                      </li>
-                      <li>
-                          <p>Grooming</p>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="expand"><div class="cart"><p>WOMEN &nbsp;</p><i class="fas fa-caret-down"></i></div></li>
-                  <li class="expand"><div class="cart"><p>KIDS &nbsp;</p><i class="fas fa-caret-down"></i></div></li>
-                  <!-- </ul>
-              </div> -->
-                <a href="cart.php" class="cart">
-                    <!-- <li>Sign In</li>
-                    <li><i id="signlogo" class="fas fa-user-circle"></i></li> -->
-                    <p>Cart &nbsp;</p><i class="fas fa-shopping-cart"></i>
-                    </a>
-                <a href="login.php"  class="signin">
-                   <p>Sign In &nbsp;</p><i id="signlogo" class="fas fa-user-circle"></i>
-                </a>
-                </p>
-            </li>
-        </ul>
-    </div>
-		<div class="products">
+
+		
             <?php 
             require 'config.php';
-            $query="SELECT * FROM shoes";
+            $query="SELECT * FROM shoes";       
             $query_run= mysqli_query($conn,$query);
             $check= mysqli_num_rows($query_run)>0;
             if($check)
@@ -74,11 +28,12 @@
                         <h3 class="product-name" style="height: 50px;overflow: hidden;"><?php echo $row['name'];?></h3>
                         <h4 class="product-price">Price: &nbsp; <?php echo $row['price'];?></h4>
                         <br>
-                        <p class="product-remove" style="right:145px;">
+                        <p class="product-remove" style="right:145px;bottom:0px;">
                             
-                            <span class="remove">Add to cart</span>
+                            <span id="addtocart" class="remove">Add to cart</span>
+                            
                         </p>
-                        <p class="product-remove" style="background-color:orange;">
+                        <p class="product-remove" style="background-color:orange;bottom:0px;">
                          
                             <span class="remove">Buy Now</span>
                         </p>
@@ -92,6 +47,33 @@
             }
             
             ?>
-        </div>
+            <script>
+                var temp=document.getElementById("addtocart");
+                temp.addEventListner("click",
+            function addtocart() {
+                
+                console.log("i am fucked");
+                 window.location.href = "cart.php";
+                <?php 
+                    // header("Location: index.php");
+                    $val=(string)$row['id'];
+                    $tableid=$val."a";
+                    $prodid=$row['id'];
+                    $tablename="clothing";
+                    $query="INSERT INTO $tableid(id,tablename,quantity)
+                    VALUES ('$prodid','$tablename','2')";
+                    if( mysqli_query($conn,$query) ){
+                        ?>window.location.href = "cart.php";
+                        <?php
+                    }
+                    else{?>
+                        window.location.href = "index.php";<?php
+                    }
+                    
+                    
+                ?>
+            });
+        </script>
+        
     </body>
 </html>

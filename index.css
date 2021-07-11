@@ -3,6 +3,10 @@
     font-family: 'Poppins', sans-serif;
     
 }
+h1{
+  width: 100%;
+  text-align: center;
+}
 a{
     text-decoration:none !important;
     color:inherit !important;
@@ -12,6 +16,9 @@ body{
     height: 100vh;
     width: 100vw;
 }
+.toolbar p{
+  margin-top: 4px !important;
+}
 .fas{
     color:white;
 }
@@ -20,49 +27,15 @@ body{
     list-style-type: none;
     justify-content: center;
     padding: 2px 10px 2px 10px;
+    width: 100%;
     background: #e40046;
     color: white;
-}
-input[type="text"]{
-    background: rgba(244,244,244);
-    border: none;
-    width: 300px;
-    font-size: 14px;
-    color: #909090;
-    border-right: none;
-    height: 37px;
-    padding: 0 10px 0 32px;
-    outline: none;
-    text-overflow: ellipsis;
-    border-radius: 2px 0px 0px 2px;
-    font-family: "font-regular";
-    display: table-cell;
-}
-input[type="button"]
-{
-    position: relative;
-    top: 0;
-    background: #333;
-    color: #fff;
-    transition: all .2s ease-out;
-    height: 37px;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    display: table-cell;
-    line-height: 25px;
-    font-size: 14px;
-    border-radius: 0 3px 3px 0 !important;
-    padding:0px 10px 0px 10px;
 }
 .options{
     position: absolute;
     display: flex;
     margin-left: 1000px;
     margin-right: 0px;
-}
-.search{
-    padding:15px 0px 5px 0px;
 }
 .cart{
     display: flex;
@@ -97,6 +70,22 @@ input[type="button"]
   background:white;
   z-index:100;
 }
+.logout::after{
+  content: '';
+ 
+  width: 0%;
+  height: 3px;
+  background:white;
+  text-align: center;
+  display: block !important;
+  margin: auto;
+  transition: 0.5s;
+}
+.logout:hover::after{
+  width: 100%;
+  background:white;
+  z-index:100;
+}
 .expand ul{
   list-style: none;
   width: 100px;
@@ -126,68 +115,18 @@ input[type="button"]
 .signin{
     display: flex;
     cursor: pointer;
-    padding: 14px 0px 0px 30px;
-    border-left: white solid 1px;
+    padding: 14px 0px 12px 30px;
+}
+.logout{
+  border-left: white solid 1px;
+}
+#logout{
+  display: none;
 }
 .signin i{
     font-size: 250%;
 }
 
-/* ------------------catergory--------------------*/
-.menubar{
-    display: flex;
-    list-style-type: none;
-    padding:5px 0px 0px 0px;
-    text-align: center;
-    color: white;
-    background-color:black;
-}
-.menu ul{
-    padding: 0px;
-    display:flex;
-}
-.menu ul li::after{
-    content: '';
-    width: 0%;
-    height: 2px;
-    background: white;
-    display: block;
-    margin: auto;
-    transition: 0.5s;
-}
-.menu ul li:hover::after{
-    width: 100%;
-    background:white;
-    z-index:100;
-}
-.menu ul li{
-    
-    list-style: none;
-    width: 200px;
-    height: 30px;
-    line-height: 30px; 
-    font-size: 15px;
-    text-align: center;
-}
-.menu ul li ul{
-    display: none;
-    position:absolute;
-    z-index:5;
-    background:black;
-    opacity: 0.6;
-    padding-bottom:3px;
-}
-.menu ul li:hover > ul{
-    display: block;
-}
-.menu ul li ul li{
-    position: relative;
-}
-.menu ul li ul li ul{
-    position: absolute;
-    left:200px;
-    top:0px;
-}
 /* ------------------banner------------------- */
 /* body{
   height: 100vh;
@@ -201,7 +140,7 @@ input[type="button"]
   position: relative;
   background: #000116;
   width: 100%;
-  min-height: 595px;
+  min-height: 450px;
   overflow: hidden;
   /* display: none; */
 }

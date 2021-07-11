@@ -24,11 +24,25 @@ if (isset($_POST['submit'])) {
 					VALUES ('$username', '$email', '$password')";
 			$result = mysqli_query($conn, $sql);
 			if ($result) {
-				echo "<script>alert('Wow! User Registration Completed.')</script>";
+				// echo "<script>alert('User registered successfully!!')</script>";
+				$sql="SELECT * FROM users WHERE email='$email'";
+				$query_run= mysqli_query($conn,$sql);
+				$row=mysqli_fetch_assoc($query_run);
+				$_SESSION['username'] =$username;
+				$_SESSION['id']=$row['id'];
 				$username = "";
 				$email = "";
 				$_POST['password'] = "";
 				$_POST['cpassword'] = "";
+				$val=(string)$row['id'];
+				$userid=$val."a";
+			$query="CREATE TABLE $userid (id int, tablename varchar(255), quantity int)";
+			if(mysqli_query($conn, $query)){
+				header("Location: index.php");
+				
+			}
+
+
 			} else {
 				echo "<script>alert('Woops! Something Wrong Went.')</script>";
 			}

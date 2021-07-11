@@ -15,9 +15,13 @@
 	grid-template-columns: repeat(4,1fr);
 	grid-gap:10px;
 }
-
-
-
+.products{
+	/* border: 1px solid black; */
+	display: grid;
+	grid-auto-rows: 450px;
+	grid-template-columns: repeat(3,1fr);
+	grid-gap:10px;
+}
 
 
 
@@ -50,7 +54,7 @@
 	transform: scale(1.01);
 }
 .product > img{
-	width: 310px;
+	width: 320px;
 	height: 200px;
 	object-fit: cover;
 }
@@ -62,8 +66,8 @@
 	width: 100%;
 	position: relative;
 }
-.product-name, .product-price, .product-offer{
-	margin-bottom: 20px;
+.product-name, .product-price, .product-offer, .product-brand{
+	margin-bottom: 10px;
 }
 .product-remove{
 	position: absolute;
