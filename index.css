@@ -7,6 +7,10 @@ h1{
   width: 100%;
   text-align: center;
 }
+.expand ul li{
+  padding:10px 10px 10px 10px;
+  text-align: center;
+}
 a{
     text-decoration:none !important;
     color:inherit !important;
@@ -88,7 +92,7 @@ body{
 }
 .expand ul{
   list-style: none;
-  width: 100px;
+  width: 130px;
   height: 0px;
   position: absolute;
   z-index: 500;

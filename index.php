@@ -28,7 +28,7 @@
                   <li class="expand"><div class="cart"><p>MEN &nbsp;</p><i class="fas fa-caret-down"></i></div>
                     <ul>
                       <li>
-                          <a href="card.php">footware</a>
+                          <a href="men_footwear.php">footware</a>
                           <ul>
                             <li>casual shoes
                                 <ul>
@@ -40,14 +40,28 @@
                         </ul>
                       </li>
                       <li>
-                          <p>Clothing</p>
+                          <a href="men_clothing.php">Clothing</a>
                       </li>
                       <li>
-                          <p>Grooming</p>
+                          <a href="grooming.php">Grooming</a>
                       </li>
                     </ul>
                   </li>
-                  <li class="expand"><div class="cart"><p>WOMEN &nbsp;</p><i class="fas fa-caret-down"></i></div></li>
+                  <li class="expand"><div class="cart"><p>WOMEN &nbsp;</p><i class="fas fa-caret-down"></i></div>
+                  <ul>
+                      <li>
+                          <a href="female_footwear.php">footware</a>
+                          
+                      </li>
+                      <li>
+                          <a href="female_clothing.php">Clothing</a>
+                      </li>
+                      <li>
+                          <p>Beauty</p>
+                      </li>
+                    </ul>
+                  </li>
+                </li>
                   <li class="expand"><div class="cart"><p>KIDS &nbsp;</p><i class="fas fa-caret-down"></i></div></li>
                   <!-- </ul>
               </div> -->
@@ -115,6 +129,7 @@
             <li>Computers</li>
         </ul>
     </div> -->
+    
     <!--------------------------banner---------------------->
     <div class="slider">
       <div class="slide active">
@@ -309,7 +324,7 @@
       <div class="owl-carousel">
       <?php 
             require 'config.php';
-            $query="SELECT * FROM shoes WHERE popularity>=4 ORDER BY popularity DESC";       
+            $query="SELECT * FROM men_clothing WHERE popularity>=4 ORDER BY popularity DESC";       
             $query_run= mysqli_query($conn,$query);
             $check= mysqli_num_rows($query_run)>0;
             if($check)

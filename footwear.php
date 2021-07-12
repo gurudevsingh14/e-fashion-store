@@ -12,7 +12,7 @@
 		
             <?php 
             require 'config.php';
-            $query="SELECT * FROM shoes";       
+            $query="SELECT * FROM shoes WHERE gender='male'";       
             $query_run= mysqli_query($conn,$query);
             $check= mysqli_num_rows($query_run)>0;
             if($check)
