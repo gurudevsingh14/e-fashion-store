@@ -5,6 +5,10 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+a{
+    text-decoration:none !important;
+    color:inherit !important;
+}
 .main{
 	width: 95%;
 	margin: 20px;
@@ -94,12 +98,15 @@
 	margin-right: 5px;
 }
 .card-total{
-	flex: 0.25;
+	flex: 100%;
 	margin-left: 20px;
 	padding: 20px;
 	height: 240px;
+	width: 280px;
 	border: 1px solid silver;
 	border-radius: 5px;
+	position: fixed;
+	right:40px;
 }
 .card-total p{
 	display: flex;

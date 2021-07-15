@@ -6,8 +6,9 @@
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+<a href="index.php" ><i class="fa fa-home" style="position:absolute;font-size:50px;margin:15px 20px;color:#e40046;"></i></a>
 <div class="container">
-	<h1>Shopping card</h1>
+	<h1>&nbsp;&nbsp;Shopping card</h1>
 	<div class="card">
 		<div class="products" >
 			<?php 
@@ -27,12 +28,14 @@
 				$query="SELECT * FROM $userid";
 				$query_run= mysqli_query($conn, $query);
 				$check= mysqli_num_rows($query_run) > 0;
-				
+				$total=0;
+				$items=0;
+				$saving=0;
 				if($check)
 				{
 					while($row= mysqli_fetch_assoc($query_run))
 					{	
-						// $query2="SELECT * FROM '$row['table']' where id='$row['id']'";
+						$items+=$row['quantity'];//number of items in cart
 						$query2 = "SELECT * FROM {$row['tablename']} WHERE id={$row['id']}";
 						$prod_query=mysqli_query($conn, $query2);
 						if(mysqli_num_rows($prod_query)>0)
@@ -40,21 +43,27 @@
 						else{
 							continue;
 						}
+						$total+=$product['price'];//total price
+						$saving+=($product['price']*($product['discount']/100))*$row['quantity'];//amount saved
 						 ?>
+					<form method="post" action="remove.php">
 						<div class="product">
 						<img src="<?php echo $product['image']; ?>">
 						<div class="product-info">
 						<h2 class="product-brand" style="height: 30px;overflow: hidden;"><?php echo $product['brand']; ?></h2><br>
 								<h3 class="product-name" style="height: 30px;overflow: hidden;"><?php echo $product['name']; ?></h3>
-							<h4 class="product-price">₹ <?php echo $product['price']; ?></h4>
-							<h4 class="product-offer"><?php echo $product['discount']; ?>%</h4>
-							<p class="product-quantity">Qnt: <input value="<?php echo $row['quantity']; ?>" name="quantity">
-							<p class="product-remove">
-								<i class="fa fa-trash" aria-hidden="true"></i>
-								<span class="remove">Remove</span>
-							</p>
+							<h4 class="product-price">₹ <?php echo $product['price']; ?>&nbsp; 
+							<s style="color:grey;"><?php echo $product['price']+($product['price']*($product['discount']/100)); ?></s></h4>
+							<h4 class="product-offer"><?php echo "discount: ".$product['discount']; ?>%</h4>
+							<div style="margin-top:20px;">
+							<input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
+                            <input type="hidden" name="tablename" value="<?php echo $row['tablename']; ?>" />
+							<p class="product-quantity" style="position:absolute;bottom:5px;">Qnt: <input value="<?php echo $row['quantity']; ?>" name="quantity"></p>
+                            <input name="remove" value="Remove" type="submit" class="product-remove" style="right:30px;bottom:0px;">
+							</div>
 						</div>
-					</div>
+						</div>
+					</form>
 						<?php
 					}
 				}
@@ -81,15 +90,15 @@
 		<div class="card-total">
 			<p>
 				<span>Total Price</span>
-				<span>₹ 3,000</span>
+				<span>₹ <?php echo $total; ?></span>
 			</p>
 			<p>
 				<span>Number of Items</span>
-				<span>2</span>
+				<span><?php echo $items; ?></span>
 			</p>
 			<p>
 				<span>You Save</span>
-				<span>₹ 1,000</span>
+				<span>₹ <?php echo $saving; ?></span>
 			</p>
 			<a href="#">Proceed to Checkout</a>
 		</div>

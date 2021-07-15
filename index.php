@@ -22,22 +22,16 @@
                 <input type="text">
                 <input type="button" value="Search">
             </li> -->
+            <img src="img/logo.jpg" style="position:absolute;margin-top:5px;width:180px;height:60px;object-fit:cover;left:15px;">
             <li class="options">
               <!-- <div class="menu">
                 <ul> -->
+                 
                   <li class="expand"><div class="cart"><p>MEN &nbsp;</p><i class="fas fa-caret-down"></i></div>
                     <ul>
                       <li>
-                          <a href="men_footwear.php">footware</a>
-                          <ul>
-                            <li>casual shoes
-                                <ul>
-                                    <li>puma</li>
-                                    <li>nike</li>
-                                </ul>
-                            </li>
-                            <li>Sports shoes</li>
-                        </ul>
+                          <a href="footwear.php">footware</a>
+                          
                       </li>
                       <li>
                           <a href="men_clothing.php">Clothing</a>
@@ -221,7 +215,6 @@
       if(slideNumber < 0){
         slideNumber = numberOfSlides - 1;
       }
-
       slides[slideNumber].classList.add("active");
       slideIcons[slideNumber].classList.add("active");
     });
@@ -275,10 +268,11 @@
     <link rel="stylesheet" href="carousel.css" />
     <link rel="stylesheet" type="text/css" href="cart.css">
     <div class="carousel-wrap">
-    <h1>Deals of the day</h1>
+    <h1 class="heading">Deals of the day</h1>
       <div class="owl-carousel">
       <?php 
             require 'config.php';
+            $tablename="shoes";
             $query="SELECT * FROM shoes WHERE discount>=50 ORDER BY discount DESC";       
             $query_run= mysqli_query($conn,$query);
             $check= mysqli_num_rows($query_run)>0;
@@ -287,24 +281,20 @@
                while($row= mysqli_fetch_assoc($query_run))
                {
                     ?>
-                    <div class="product" style="min-height:420px;">
+                    <form method="post" action="addtocart.php" class="product" style="min-height:420px;">
                         <img src="<?php echo $row['image'];?>">
                         <div class="product-info" style="display:flex;flex-direction: column;justify-content: space-between;">
                         <h2 style="height: 30px;overflow: hidden;"><?php echo $row['brand'];?></h2><br>
                         <h3 class="product-name" style="height: 45px;overflow: hidden;"><?php echo $row['name'];?></h3>
-                        <h4 class="product-price">Price: &nbsp; <?php echo $row['price'];?></h4>
+                        <h4 class="product-price">Price: &nbsp; <?php echo $row['price'];?>&nbsp;
+                        <s style="color:grey;"><?php echo $row['price']+($row['price']*($row['discount']/100)); ?></s></h4>
                         <br>
-                        <p class="product-remove" style="right:145px;bottom:0px;">
-                            
-                            <span id="addtocart" class="remove">Add to cart</span>
-                            
-                        </p>
-                        <p class="product-remove" style="background-color:orange;bottom:0px;">
-                         
-                            <span class="remove">Buy Now</span>
-                        </p>
+                        <input type="hidden" name="id" value="<?php echo $row["id"]; ?>" />
+                            <input type="hidden" name="tablename" value="<?php echo $tablename; ?>" />
+                            <p class="product-quantity" style="position:absolute;bottom:5px;">Qnt: <input value="1" name="quantity"></p>
+                            <input name="addtocart" value="Add to cart" type="submit" class="product-remove" style="right:30px;bottom:0px;">
                         </div>
-                    </div>
+                    </form>
                     <?php
                }
             
@@ -320,11 +310,12 @@
     <!---------------------------------Trending----------------------------------------->
 
     <div class="carousel-wrap">
-    <h1>Trending</h1>
+    <h1 class="heading" >Trending</h1>
       <div class="owl-carousel">
       <?php 
             require 'config.php';
-            $query="SELECT * FROM men_clothing WHERE popularity>=4 ORDER BY popularity DESC";       
+            $tablename="men_clothing";
+            $query="SELECT * FROM men_clothing WHERE popularity>=4 ORDER BY popularity DESC";         
             $query_run= mysqli_query($conn,$query);
             $check= mysqli_num_rows($query_run)>0;
             if($check)
@@ -332,24 +323,20 @@
                while($row= mysqli_fetch_assoc($query_run))
                {
                     ?>
-                    <div class="product" style="min-height:420px;">
+                    <form method="post" action="addtocart.php" class="product" style="min-height:420px;">
                         <img src="<?php echo $row['image'];?>">
                         <div class="product-info" style="display:flex;flex-direction: column;justify-content: space-between;">
                         <h2 style="height: 30px;overflow: hidden;"><?php echo $row['brand'];?></h2><br>
                         <h3 class="product-name" style="height: 45px;overflow: hidden;"><?php echo $row['name'];?></h3>
-                        <h4 class="product-price">Price: &nbsp; <?php echo $row['price'];?></h4>
+                        <h4 class="product-price">Price: &nbsp; <?php echo $row['price'];?> &nbsp;
+                        <s style="color:grey;"><?php echo $row['price']+($row['price']*($row['discount']/100)); ?></s></h4>
                         <br>
-                        <p class="product-remove" style="right:145px;bottom:0px;">
-                            
-                            <span id="addtocart" class="remove">Add to cart</span>
-                            
-                        </p>
-                        <p class="product-remove" style="background-color:orange;bottom:0px;">
-                         
-                            <span class="remove">Buy Now</span>
-                        </p>
+                        <input type="hidden" name="id" value="<?php echo $row["id"]; ?>" />
+                            <input type="hidden" name="tablename" value="<?php echo $tablename; ?>" />
+                            <p class="product-quantity" style="position:absolute;bottom:5px;">Qnt: <input value="1" name="quantity"></p>
+                            <input name="addtocart" value="Add to cart" type="submit" class="product-remove" style="right:30px;bottom:0px;">
                         </div>
-                    </div>
+                    </form>
                     <?php
                }
             

@@ -74,6 +74,23 @@ body{
   background:white;
   z-index:100;
 }
+.heading::after{
+  content: '';
+  margin-top: 5px;
+  width: 0%;
+  height: 3px;
+  background:#e40046;
+  text-align: center;
+  display: block !important;
+  margin: auto;
+  transition: 0.5s;
+}
+.carousel-wrap:hover> .heading::after{
+  margin-top: 5px;
+  width: 15%;
+  background:#e40046;
+  z-index:100;
+}
 .logout::after{
   content: '';
  
@@ -243,29 +260,7 @@ body{
   background: #4285F4;
 }
 
-@media (max-width: 900px){
-  .slider{
-    width: 100%;
-  }
 
-  .slider .slide .info{
-    position: relative;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media (max-width: 500px){
-  .slider .slide .info h2{
-    font-size: 1.8em;
-    line-height: 40px;
-  }
-
-  .slider .slide .info p{
-    font-size: 0.9em;
-  }
-}
 /* --------------------deals of the day------------------------ */
 .card{
   height: 200px;
