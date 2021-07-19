@@ -4,16 +4,12 @@ The solely purpose of building this site is for practising my development skills
 Tech used : HTML, CSS, PHP, MYSQL, JAVASCRIPT
 
 You can visit this website through this <a href="http://e-fashion-store.epizy.com/">link</a>
-
 ## Installation Prerequisites
-***
 - XAMPP
   <br />
 To Download XAMPP server visit [here](https://www.apachefriends.org/index.html)
-<br />
 
 ## How to Run this Project
-***
 
 1. Clone this repository to your local machine to <br />
     File path: ` C:\xampp\htdocs ` (make sure to delete all pre exisiting file before cloning this repo)
