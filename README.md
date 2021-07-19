@@ -18,15 +18,15 @@ To Download XAMPP server visit [here](https://www.apachefriends.org/index.html)
 1. Clone this repository to your local machine to <br />
     File path: ` C:\xampp\htdocs ` (make sure to delete all pre exisiting file before cloning this repo)
 2. Now open XAMPP Control Panel and start Apache and MySQL Module<br />
-   <img src="https://www.phpflow.com/wp-content/uploads/2020/03/xampp-port-changes.png" width="450px"><br />
+   <img src="https://www.phpflow.com/wp-content/uploads/2020/03/xampp-port-changes.png" width="550px"><br />
 3. Open your browser and type `localhost/phpmyadmin/` inside url box
 4. Create new database.<br />
    Click on New<br />
-   <img src="https://www.homeandlearn.co.uk/php/images/database/phpMyAdmin_start_screen2.gif" width="450px"><br />
+   <img src="https://www.homeandlearn.co.uk/php/images/database/phpMyAdmin_start_screen2.gif" width="550px"><br />
    Enter Database name and press on Create button<br />
-   <img src="https://www.android-examples.com/wp-content/uploads/2015/12/create-database.png" width="450px">
-5. Open your config.php file and enter your database name in `$database = ""` variable and save changes.
+   <img src="https://www.android-examples.com/wp-content/uploads/2015/12/create-database.png" width="550px">
+5. Open config.php file and enter your database name in `$database = ""` variable and save changes.
 6. Now open url `localhost` on your browser.<br />
    Open cloned repo folder<br />
-    <img src="./img/page.jpg" width="450px">
-7. Your webpage will loaded immediately.
+    <img src="./img/page.jpg" width="550px">
+7. Webpage will load immediately.
