@@ -21,8 +21,15 @@ To Download XAMPP server visit [here](https://www.apachefriends.org/index.html)
    <img src="https://www.homeandlearn.co.uk/php/images/database/phpMyAdmin_start_screen2.gif" width="550px"><br />
    Enter Database name and press on Create button<br />
    <img src="https://www.android-examples.com/wp-content/uploads/2015/12/create-database.png" width="550px">
-5. Open config.php file and enter your database name in `$database = ""` variable and save changes.
-6. Now open url `localhost` on your browser.<br />
+5. Click on your newly created database.<br />
+   Go to import and choose `database.sql` file<br />
+   <img src="./img/import.jpg" width="650px"><br />
+   Now scroll down and click on Go.<br />
+   <img src="./img/go.jpg" width="200px"><br />
+   All the tables will be inserted automatically.
+
+7. Open config.php file and enter your database name in `$database = ""` variable and save changes.
+8. Now open url `localhost` on your browser.<br />
    Open cloned repo folder<br />
     <img src="./img/page.jpg" width="550px">
-7. Webpage will load immediately.
+9. Webpage will load immediately.
