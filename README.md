@@ -4,3 +4,5 @@ The solely purpose of building this site is for practising my development skills
 Tech used : HTML, CSS, PHP, MYSQL, JAVASCRIPT
 
 You can visit this website through this <a href="http://e-fashion-store.epizy.com/">link</a>
+
+<h3>Installation Prerequisites</h3>
