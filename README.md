@@ -23,9 +23,9 @@ To Download XAMPP server visit [here](https://www.apachefriends.org/index.html)
    <img src="https://www.android-examples.com/wp-content/uploads/2015/12/create-database.png" width="550px">
 5. Click on your newly created database.<br />
    Go to import and choose `database.sql` file<br />
-   <img src="./img/import.jpg" width="650px"><br />
+   <img src="./img/import.JPG" width="650px"><br />
    Now scroll down and click on Go.<br />
-   <img src="./img/go.jpg" width="200px"><br />
+   <img src="./img/go.JPG" width="200px"><br />
    All the tables will be inserted automatically.
 
 7. Open config.php file and enter your database name in `$database = ""` variable and save changes.
