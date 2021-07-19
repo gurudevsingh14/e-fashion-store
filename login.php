@@ -10,21 +10,30 @@ if (isset($_SESSION['username'])) {
 
 }
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit']))
+{
 	$email = $_POST['email'];
 	$password = md5($_POST['password']);
-
-	$sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
-	$result = mysqli_query($conn, $sql);
-	if ($result->num_rows > 0) {
-		$row = mysqli_fetch_assoc($result);
-		$_SESSION['username'] = $row['username'];
-		$_SESSION['id']= $row['id'];
- ?><script> document.getElementById("profilename").innerHTML="logout";</script><?php
-		header("Location: index.php");
-	} else {
-		echo "<script>alert('Woops! Email or Password is Wrong.')</script>";
-	}
+	$sql= "SELECT * FROM users WHERE email='$email'";
+		$result= mysqli_query($conn,$sql);
+		if($result->num_rows > 0)
+		{	
+			$row = mysqli_fetch_assoc($result);
+			if ($password==$row['password']) 
+			{
+				$_SESSION['username'] = $row['username'];
+				$_SESSION['id']= $row['id'];
+				?><script> document.getElementById("profilename").innerHTML="logout";</script><?php
+				header("Location: index.php");
+			} 
+			else 
+			{
+				echo "<script>alert('Woops! Password is Wrong.')</script>";
+			}
+		}
+		else{
+			echo "<script>alert('Email ID you entered is not registered.');</script>";
+		}
 }
 
 ?>

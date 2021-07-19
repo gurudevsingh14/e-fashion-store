@@ -26,7 +26,8 @@
                             <div class="product-info" style="display:flex;flex-direction: column;justify-content: space-between;">
                             <h2 name="" style="height: 40px;overflow: hidden;"><?php echo $row['brand'];?></h2><br>
                             <h3 class="product-name" style="height: 50px;overflow: hidden;"><?php echo $row['name'];?></h3>
-                            <h4 class="product-price">Price: &nbsp; <?php echo $row['price'];?></h4>
+                            <h4 class="product-price">Price: &nbsp; <?php echo $row['price'];?>&nbsp;
+                        <s style="color:grey;"><?php echo $row['price']+($row['price']*($row['discount']/100)); ?></s></h4>
                             <br>
                             <input type="hidden" name="id" value="<?php echo $row["id"]; ?>" />
                             <input type="hidden" name="tablename" value="<?php echo $tablename; ?>" />

@@ -16,7 +16,8 @@ a{
     color:inherit !important;
 }
 body{
-    background:white;
+  /* background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)); */
+  
     height: 100vh;
     width: 100vw;
 }
@@ -33,7 +34,11 @@ body{
     padding: 2px 10px 2px 10px;
     width: 100%;
     background: #e40046;
+    /* background-color: black; */
+    /* opacity: 0.8; */
+    z-index:500;
     color: white;
+    position:fixed;
 }
 .options{
     position: absolute;
@@ -163,6 +168,7 @@ body{
   width: 100%;
   min-height: 450px;
   overflow: hidden;
+  padding-top:72px;
   /* display: none; */
 }
 
@@ -271,3 +277,30 @@ body{
   width:100%;
   height: 100%;
 }
+/* ---------------------------footer------------------------------ */
+.footer{
+  background: black;
+  color: rgb(187, 187, 187);
+  font-size: small;
+
+}
+.white{
+  color: white;
+}
+.contact{
+  padding-top: 20px;
+  padding-left: 50px;
+}
+.social-media{
+  /* display: flex; */
+  position: absolute;
+  text-align: center;
+  /* margin-bottom: 100px; */
+  right: 200px;
+  color: white;
+}
+.social-media .fab{
+  font-size: 20px;
+  padding:20px;
+}
+

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 15, 2021 at 02:45 PM
+-- Generation Time: Jul 19, 2021 at 02:31 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -20,57 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `login_register`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `2a`
---
-
-CREATE TABLE `2a` (
-  `id` int(11) DEFAULT NULL,
-  `tablename` varchar(255) DEFAULT NULL,
-  `quantity` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `3a`
---
-
-CREATE TABLE `3a` (
-  `id` int(11) DEFAULT NULL,
-  `tablename` varchar(255) DEFAULT NULL,
-  `quantity` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `3a`
---
-
-INSERT INTO `3a` (`id`, `tablename`, `quantity`) VALUES
-(28, 'men_clothing', 2);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `10s`
---
-
-CREATE TABLE `10s` (
-  `id` int(11) NOT NULL,
-  `table` varchar(255) NOT NULL,
-  `quantity` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `10s`
---
-
-INSERT INTO `10s` (`id`, `table`, `quantity`) VALUES
-(3, 'shoes', 1),
-(4, 'shoes', 4);
 
 -- --------------------------------------------------------
 
@@ -105,54 +54,99 @@ CREATE TABLE `clothing` (
   `price` int(10) NOT NULL,
   `image` text NOT NULL,
   `gender` varchar(255) NOT NULL,
-  `discount` int(11) DEFAULT NULL
+  `discount` int(11) DEFAULT NULL,
+  `popularity` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `clothing`
 --
 
-INSERT INTO `clothing` (`id`, `brand`, `name`, `price`, `image`, `gender`, `discount`) VALUES
-(1, 'Daevish', 'Women Skater Black Dress', 449, 'https://rukminim1.flixcart.com/image/880/1056/khavrm80-0/dress/r/t/j/m-dress-226-daevish-original-imafxchtjzanbuag.jpeg?q=50', 'female', 30),
-(2, 'Dreambucket', 'Embroidered Fashion Georgette Saree  (Black)', 1349, 'https://rukminim1.flixcart.com/image/880/1056/kevpwnk0/sari/q/i/c/free-rv-mirror-glamory-saree-unstitched-original-imafvgpahmpkpkht.jpeg?q=50', 'female', 40),
-(3, 'Being Banarasi', 'Jacquard Woven Kurta & Churidar Material  (Unstitched)', 559, 'https://rukminim1.flixcart.com/image/880/1056/kplisnk0/fabric/o/b/r/yes-unstitched-bb-10009-b-being-banarasi-original-imag3srsscgqf8vj.jpeg?q=50', 'female', 50),
-(4, 'Anand', 'Jacquard Printed Kurta & Churidar Material  (Unstitched)', 479, 'https://rukminim1.flixcart.com/image/880/1056/k4hcjgw0pkrrdj/fabric/y/d/7/green-jdm-blue-1-3-payal-jdm-blue-1-3-original-imafnfr4wu6kfkuk.jpeg?q=50', 'female', 35),
-(5, 'Being Banarasi', 'Brocade Solid, Printed Kurta & Churidar Material  (Unstitched)', 559, 'https://rukminim1.flixcart.com/image/880/1056/ke7ff680-0/fabric/r/u/m/yes-unstitched-bb-10012-f-being-banarasi-original-imafuxtz5tdxgghd.jpeg?q=50', 'female', 55),
-(6, 'Stylum', 'Women Top and Skirt Set Rayon', 939, 'https://rukminim1.flixcart.com/image/880/1056/kflftzk0/ethnic-set/h/f/r/m-bluezoomskirtoset-stylum-original-imafwfyqsqnwhfeu.jpeg?q=50', 'female', 60),
-(7, 'Brite Tailors', 'Women Kurta and Skirt Set Rayon', 809, 'https://rukminim1.flixcart.com/image/880/1056/kfmv9u80/ethnic-set/k/7/n/xl-pink-black-kurta-skirt-brite-tailors-original-imafwfg7jgy5wkeq.jpeg?q=50', 'female', 40),
-(8, 'Tamsa', 'Women Kurta and Skirt Set Cotton Rayon Blend', 829, 'https://rukminim1.flixcart.com/image/880/1056/k6l2vm80/ethnic-set/c/b/k/xl-women-kurta-and-skirt-set-rayon-kirti-designers-original-imafz4ptjdpw2hmg.jpeg?q=50', 'female', 45),
-(9, 'Iskon Ethnic', 'Women Kurta and Palazzo Set Cotton Blend', 549, 'https://rukminim1.flixcart.com/image/880/1056/k5y7tzk0/kurta/u/w/n/s-k-056-mustard-iskon-ethnic-original-imafmsdu5wghkzta.jpeg?q=50', 'female', 55),
-(10, 'JC4U', 'Women Kurta and Palazzo Set Cotton Blend', 699, 'https://rukminim1.flixcart.com/image/880/1056/kfmv9u80/ethnic-set/j/d/7/xxl-hlf973-highlight-fashion-export-original-imafwfg8s4fhapuc.jpeg?q=50', 'female', 22),
-(11, 'Lee Moda', 'Women Kurta and Palazzo Set Rayon', 933, 'https://rukminim1.flixcart.com/image/880/1056/kfoapow0/ethnic-set/5/q/e/s-4064a-lee-moda-original-imafw2qatz9dteky.jpeg?q=50', 'female', 55),
-(12, 'Nehamta', 'Women Kurta and Palazzo Set Rayon', 1513, 'https://rukminim1.flixcart.com/image/880/1056/kfmv9u80/ethnic-set/h/f/a/l-nmk1117-nehamta-original-imafwfgcnazq4rbk.jpeg?q=50', 'female', 35),
-(13, 'Unisets', 'Women Kurta and Sharara Set Rayon', 1169, 'https://rukminim1.flixcart.com/image/880/1056/kfmv9u80/ethnic-set/7/u/z/xxl-tuc121m-unisets-original-imafwfgbtefyqtbn.jpeg?q=50', 'female', 30),
-(14, 'Manukrit', 'Women Kurta and Sharara Set Cotton Blend', 885, 'https://rukminim1.flixcart.com/image/880/1056/k6zda4w0/ethnic-set/w/v/g/s-84pnk-manukriti-original-imafpbfprsd8hh5p.jpeg?q=50', 'female', 20),
-(15, 'Anand', 'Jacquard Printed Kurta & Churidar Material  (Unstitched)', 479, 'https://rukminim1.flixcart.com/image/880/1056/k4hcjgw0pkrrdj/fabric/y/d/7/green-jdm-blue-1-3-payal-jdm-blue-1-3-original-imafnfr4wu6kfkuk.jpeg?q=50', 'female', 30),
-(16, 'INDIAN BEAUTIFUL', 'Brocade Self Design Salwar Suit Material  (Unstitched)', 620, 'https://rukminim1.flixcart.com/image/880/1056/k3bwrrk0/fabric/e/h/z/d-black-shiv-rudra-enterprise-original-imafjeg74gqhajsr.jpeg?q=50', 'female', 50),
-(17, 'Anand', 'Women Kurta and Sharara Set Pure Cotton', 1695, 'https://rukminim1.flixcart.com/image/880/1056/kfmv9u80/ethnic-set/h/x/y/m-nmk1254-nehamta-original-imafwfga2trg4jza.jpeg?q=50', 'female', 15),
-(18, 'Anugrah Textile', 'Embroidered Banarasi Net, Velvet Saree  (White, Blue)', 499, 'https://rukminim1.flixcart.com/image/880/1056/kfpq5jk0-0/sari/z/i/n/free-hnc000120-hnc-retail-unstitched-original-imaf6qqasxhsthad.jpeg?q=50', 'female', 25),
-(19, 'Leelavati', 'Printed Daily Wear Georgette Saree  (Multicolor)', 296, 'https://rukminim1.flixcart.com/image/880/1056/keq058w0-0/sari/b/s/k/free-vs-402-1-leelavati-unstitched-original-imafvc3gfmmfphj2.jpeg?q=50', 'female', 60),
-(20, 'Leelavati', 'Printed Daily Wear Georgette Saree  (Light Blue)', 296, 'https://rukminim1.flixcart.com/image/880/1056/kmkxbww0/sari/w/w/v/free-vs-742-1-leelavati-unstitched-original-imagfg8ydh4htkgd.jpeg?q=50', 'female', 34),
-(21, 'Leelavati', 'Floral Print Daily Wear Georgette Saree  (Multicolor)', 299, 'https://rukminim1.flixcart.com/image/880/1056/kq6yefk0/sari/k/q/1/free-vs-771-1-leelavati-unstitched-original-imag49azqwytgm8t.jpeg?q=50', 'female', 33),
-(22, 'Leelavati', 'Printed Daily Wear Georgette Saree  (Light Green)', 296, 'https://rukminim1.flixcart.com/image/880/1056/kp036vk0/sari/t/a/b/free-vs-749-1-leelavati-unstitched-original-imag3cdm2utfh2v2.jpeg?q=50', 'female', 40),
-(23, 'Leelavati', 'Printed Daily Wear Georgette Saree  (Light Green)', 296, 'https://rukminim1.flixcart.com/image/880/1056/knan98w0/sari/j/k/t/free-vs-736-1-leelavati-unstitched-original-imag2yb8rkc8zjp4.jpeg?q=50', 'female', 20),
-(24, 'Leelavati', 'Printed Daily Wear Georgette Saree (Multicolor)', 296, 'https://rukminim1.flixcart.com/image/880/1056/keq058w0-0/sari/v/a/h/free-vs-413-1-leelavati-unstitched-original-imafvc4h86erjbh9.jpeg?q=50', 'female', 20),
-(25, 'Kanooda Prints', 'Floral Print Daily Wear Georgette Saree  (Grey)', 336, 'https://rukminim1.flixcart.com/image/880/1056/k5ihzm80/sari/r/t/9/free-1131-dipam-grey-jometrical-kanooda-prints-original-imafz6t4hg5fkkkm.jpeg?q=50', 'female', 10),
-(26, 'G.S Fashion', 'Women Printed Crepe Straight Kurta  (Multicolor)', 229, 'https://rukminim1.flixcart.com/image/880/1056/k6ci8i80/kurti/f/d/k/l-50-gs-fashion-original-imafzrqh7jszjm7c.jpeg?q=50', 'female', NULL),
-(27, 'SAARA', 'Women Printed Rayon Straight Kurta  (Dark Blue)', 471, 'https://rukminim1.flixcart.com/image/880/1056/k5msb680/kurta/2/q/j/xl-294k528-saara-original-imafz9sxdrzugfck.jpeg?q=50', 'female', NULL),
-(28, 'Surhi', 'Women Printed Pure Cotton Straight Kurta  (White)\r\n', 255, 'https://rukminim1.flixcart.com/image/880/1056/k73nlow0/kurta/h/6/v/xl-sa19kr328w-surhi-original-imafpf3cfzcq46gt.jpeg?q=50', 'female', NULL),
-(29, 'Pankhil', 'Women Printed Pure Cotton Straight Kurta  (Multicolor)', 250, 'https://rukminim1.flixcart.com/image/880/1056/jv44mfk0/kurta/a/n/b/xxl-sa19kr41b-surhi-original-imafff27fbmchuhz.jpeg?q=50', 'female', NULL),
-(30, 'Pankhil', 'Women Printed Pure Cotton Straight Kurta  (Multicolor)', 259, 'https://rukminim1.flixcart.com/image/880/1056/jv44mfk0/kurta/n/q/5/xxl-sa19kr41c-surhi-original-imafff27pxzhvxb4.jpeg?q=50', 'female', NULL),
-(31, 'Kanvir', 'Women Solid Pure Cotton Frontslit Kurta  (Yellow)', 299, 'https://rukminim1.flixcart.com/image/880/1056/kgb5rbk0-0/kurta/t/y/l/xl-canvir-straight-canvir-original-imafwkzsqhswpvss.jpeg?q=50', 'female', NULL),
-(32, 'Harivastra', 'Women Solid Cotton Blend Straight Kurta  (Grey)', 289, 'https://rukminim1.flixcart.com/image/880/1056/k1tm1e80/kurti/9/t/g/m-kurti-gray-thadoli-original-imafgjyhvykxezvt.jpeg?q=50', 'female', NULL),
-(33, 'Manisha', 'Women Self Design Rayon Straight Kurta  (Purple)', 349, 'https://rukminim1.flixcart.com/image/880/1056/kfcv6vk0-0/kurta/2/g/y/xl-kurta-light-purple-r-manisha-original-imafvu4cdnfzbsqh.jpeg?q=50', 'female', NULL),
-(34, 'Glorious', 'Women Printed Rayon Straight Kurta  (Yellow)', 466, 'https://rukminim1.flixcart.com/image/880/1056/kgl5ua80-0/kurta/i/f/i/xxl-psk117-glorious-original-imafwsexqgtgjyhc.jpeg?q=50', 'female', NULL),
-(35, 'here$now', 'Women Printed Pure Cotton Frontslit Kurta  (Beige)', 664, 'https://rukminim1.flixcart.com/image/880/1056/juu4jgw0/kurta/d/v/h/l-2295972-here-now-original-imaffuyc5xzfw8mh.jpeg?q=50', 'female', NULL),
-(36, 'Anouk', 'Women Printed Pure Cotton Straight Kurta  (Dark Blue)', 499, 'https://rukminim1.flixcart.com/image/880/1056/k7dnonk0/kurta/f/v/u/l-11201612-anouk-original-imafpmuspuzxxemc.jpeg?q=50', 'female', NULL),
-(37, 'See Designs', 'Women Printed Cotton Blend Straight Kurta  (Blue)', 649, 'https://rukminim1.flixcart.com/image/880/1056/kkcwo7k0/kurta/j/i/g/s-sd1551-see-designs-original-imafzpz7uhcknwk7.jpeg?q=50', 'female', NULL),
-(38, 'SAARA', 'Women Printed Pure Cotton Straight Kurta  (Yellow)', 479, 'https://rukminim1.flixcart.com/image/880/1056/kplisnk0/kurta/p/i/k/l-344k994-saara-original-imag3sp9fyqkzzqm.jpeg?q=50', 'female', NULL),
-(39, 'Stylum', 'Women Striped Pure Cotton Straight Kurta  (Green, Gold)', 449, 'https://rukminim1.flixcart.com/image/880/1056/kly2aa80/kurta/w/f/c/xl-solomint-stylum-original-imagyy7nptvcqksc.jpeg?q=50', 'female', NULL),
-(40, 'Shobhangi', 'Women Striped Rayon Frontslit Kurta  (Grey)', 449, 'https://rukminim1.flixcart.com/image/880/1056/kolsscw0/kurta/o/w/u/s-m606-myaza-original-imag3yzfumdpknvz.jpeg?q=50', 'female', NULL);
+INSERT INTO `clothing` (`id`, `brand`, `name`, `price`, `image`, `gender`, `discount`, `popularity`) VALUES
+(1, 'Daevish', 'Women Skater Black Dress', 449, 'https://rukminim1.flixcart.com/image/880/1056/khavrm80-0/dress/r/t/j/m-dress-226-daevish-original-imafxchtjzanbuag.jpeg?q=50', 'female', 30, 2),
+(2, 'Dreambucket', 'Embroidered Fashion Georgette Saree  (Black)', 1349, 'https://rukminim1.flixcart.com/image/880/1056/kevpwnk0/sari/q/i/c/free-rv-mirror-glamory-saree-unstitched-original-imafvgpahmpkpkht.jpeg?q=50', 'female', 40, 6),
+(3, 'Being Banarasi', 'Jacquard Woven Kurta & Churidar Material  (Unstitched)', 559, 'https://rukminim1.flixcart.com/image/880/1056/kplisnk0/fabric/o/b/r/yes-unstitched-bb-10009-b-being-banarasi-original-imag3srsscgqf8vj.jpeg?q=50', 'female', 50, 3),
+(4, 'Anand', 'Jacquard Printed Kurta & Churidar Material  (Unstitched)', 479, 'https://rukminim1.flixcart.com/image/880/1056/k4hcjgw0pkrrdj/fabric/y/d/7/green-jdm-blue-1-3-payal-jdm-blue-1-3-original-imafnfr4wu6kfkuk.jpeg?q=50', 'female', 35, 7),
+(5, 'Being Banarasi', 'Brocade Solid, Printed Kurta & Churidar Material  (Unstitched)', 559, 'https://rukminim1.flixcart.com/image/880/1056/ke7ff680-0/fabric/r/u/m/yes-unstitched-bb-10012-f-being-banarasi-original-imafuxtz5tdxgghd.jpeg?q=50', 'female', 55, 6),
+(6, 'Stylum', 'Women Top and Skirt Set Rayon', 939, 'https://rukminim1.flixcart.com/image/880/1056/kflftzk0/ethnic-set/h/f/r/m-bluezoomskirtoset-stylum-original-imafwfyqsqnwhfeu.jpeg?q=50', 'female', 60, 8),
+(7, 'Brite Tailors', 'Women Kurta and Skirt Set Rayon', 809, 'https://rukminim1.flixcart.com/image/880/1056/kfmv9u80/ethnic-set/k/7/n/xl-pink-black-kurta-skirt-brite-tailors-original-imafwfg7jgy5wkeq.jpeg?q=50', 'female', 40, 4),
+(8, 'Tamsa', 'Women Kurta and Skirt Set Cotton Rayon Blend', 829, 'https://rukminim1.flixcart.com/image/880/1056/k6l2vm80/ethnic-set/c/b/k/xl-women-kurta-and-skirt-set-rayon-kirti-designers-original-imafz4ptjdpw2hmg.jpeg?q=50', 'female', 45, 2),
+(9, 'Iskon Ethnic', 'Women Kurta and Palazzo Set Cotton Blend', 549, 'https://rukminim1.flixcart.com/image/880/1056/k5y7tzk0/kurta/u/w/n/s-k-056-mustard-iskon-ethnic-original-imafmsdu5wghkzta.jpeg?q=50', 'female', 55, 3),
+(10, 'JC4U', 'Women Kurta and Palazzo Set Cotton Blend', 699, 'https://rukminim1.flixcart.com/image/880/1056/kfmv9u80/ethnic-set/j/d/7/xxl-hlf973-highlight-fashion-export-original-imafwfg8s4fhapuc.jpeg?q=50', 'female', 22, 2),
+(11, 'Lee Moda', 'Women Kurta and Palazzo Set Rayon', 933, 'https://rukminim1.flixcart.com/image/880/1056/kfoapow0/ethnic-set/5/q/e/s-4064a-lee-moda-original-imafw2qatz9dteky.jpeg?q=50', 'female', 55, 4),
+(12, 'Nehamta', 'Women Kurta and Palazzo Set Rayon', 1513, 'https://rukminim1.flixcart.com/image/880/1056/kfmv9u80/ethnic-set/h/f/a/l-nmk1117-nehamta-original-imafwfgcnazq4rbk.jpeg?q=50', 'female', 35, 3),
+(13, 'Unisets', 'Women Kurta and Sharara Set Rayon', 1169, 'https://rukminim1.flixcart.com/image/880/1056/kfmv9u80/ethnic-set/7/u/z/xxl-tuc121m-unisets-original-imafwfgbtefyqtbn.jpeg?q=50', 'female', 30, 5),
+(14, 'Manukrit', 'Women Kurta and Sharara Set Cotton Blend', 885, 'https://rukminim1.flixcart.com/image/880/1056/k6zda4w0/ethnic-set/w/v/g/s-84pnk-manukriti-original-imafpbfprsd8hh5p.jpeg?q=50', 'female', 20, 4),
+(15, 'Anand', 'Jacquard Printed Kurta & Churidar Material  (Unstitched)', 479, 'https://rukminim1.flixcart.com/image/880/1056/k4hcjgw0pkrrdj/fabric/y/d/7/green-jdm-blue-1-3-payal-jdm-blue-1-3-original-imafnfr4wu6kfkuk.jpeg?q=50', 'female', 30, 1),
+(16, 'INDIAN BEAUTIFUL', 'Brocade Self Design Salwar Suit Material  (Unstitched)', 620, 'https://rukminim1.flixcart.com/image/880/1056/k3bwrrk0/fabric/e/h/z/d-black-shiv-rudra-enterprise-original-imafjeg74gqhajsr.jpeg?q=50', 'female', 50, 5),
+(17, 'Anand', 'Women Kurta and Sharara Set Pure Cotton', 1695, 'https://rukminim1.flixcart.com/image/880/1056/kfmv9u80/ethnic-set/h/x/y/m-nmk1254-nehamta-original-imafwfga2trg4jza.jpeg?q=50', 'female', 15, 8),
+(18, 'Anugrah Textile', 'Embroidered Banarasi Net, Velvet Saree  (White, Blue)', 499, 'https://rukminim1.flixcart.com/image/880/1056/kfpq5jk0-0/sari/z/i/n/free-hnc000120-hnc-retail-unstitched-original-imaf6qqasxhsthad.jpeg?q=50', 'female', 25, 4),
+(19, 'Leelavati', 'Printed Daily Wear Georgette Saree  (Multicolor)', 296, 'https://rukminim1.flixcart.com/image/880/1056/keq058w0-0/sari/b/s/k/free-vs-402-1-leelavati-unstitched-original-imafvc3gfmmfphj2.jpeg?q=50', 'female', 60, 3),
+(20, 'Leelavati', 'Printed Daily Wear Georgette Saree  (Light Blue)', 296, 'https://rukminim1.flixcart.com/image/880/1056/kmkxbww0/sari/w/w/v/free-vs-742-1-leelavati-unstitched-original-imagfg8ydh4htkgd.jpeg?q=50', 'female', 34, 3),
+(21, 'Leelavati', 'Floral Print Daily Wear Georgette Saree  (Multicolor)', 299, 'https://rukminim1.flixcart.com/image/880/1056/kq6yefk0/sari/k/q/1/free-vs-771-1-leelavati-unstitched-original-imag49azqwytgm8t.jpeg?q=50', 'female', 33, 2),
+(22, 'Leelavati', 'Printed Daily Wear Georgette Saree  (Light Green)', 296, 'https://rukminim1.flixcart.com/image/880/1056/kp036vk0/sari/t/a/b/free-vs-749-1-leelavati-unstitched-original-imag3cdm2utfh2v2.jpeg?q=50', 'female', 40, 0),
+(23, 'Leelavati', 'Printed Daily Wear Georgette Saree  (Light Green)', 296, 'https://rukminim1.flixcart.com/image/880/1056/knan98w0/sari/j/k/t/free-vs-736-1-leelavati-unstitched-original-imag2yb8rkc8zjp4.jpeg?q=50', 'female', 20, NULL),
+(24, 'Leelavati', 'Printed Daily Wear Georgette Saree (Multicolor)', 296, 'https://rukminim1.flixcart.com/image/880/1056/keq058w0-0/sari/v/a/h/free-vs-413-1-leelavati-unstitched-original-imafvc4h86erjbh9.jpeg?q=50', 'female', 20, NULL),
+(25, 'Kanooda Prints', 'Floral Print Daily Wear Georgette Saree  (Grey)', 336, 'https://rukminim1.flixcart.com/image/880/1056/k5ihzm80/sari/r/t/9/free-1131-dipam-grey-jometrical-kanooda-prints-original-imafz6t4hg5fkkkm.jpeg?q=50', 'female', 10, NULL),
+(26, 'G.S Fashion', 'Women Printed Crepe Straight Kurta  (Multicolor)', 229, 'https://rukminim1.flixcart.com/image/880/1056/k6ci8i80/kurti/f/d/k/l-50-gs-fashion-original-imafzrqh7jszjm7c.jpeg?q=50', 'female', NULL, NULL),
+(27, 'SAARA', 'Women Printed Rayon Straight Kurta  (Dark Blue)', 471, 'https://rukminim1.flixcart.com/image/880/1056/k5msb680/kurta/2/q/j/xl-294k528-saara-original-imafz9sxdrzugfck.jpeg?q=50', 'female', NULL, NULL),
+(28, 'Surhi', 'Women Printed Pure Cotton Straight Kurta  (White)\r\n', 255, 'https://rukminim1.flixcart.com/image/880/1056/k73nlow0/kurta/h/6/v/xl-sa19kr328w-surhi-original-imafpf3cfzcq46gt.jpeg?q=50', 'female', NULL, NULL),
+(29, 'Pankhil', 'Women Printed Pure Cotton Straight Kurta  (Multicolor)', 250, 'https://rukminim1.flixcart.com/image/880/1056/jv44mfk0/kurta/a/n/b/xxl-sa19kr41b-surhi-original-imafff27fbmchuhz.jpeg?q=50', 'female', NULL, NULL),
+(30, 'Pankhil', 'Women Printed Pure Cotton Straight Kurta  (Multicolor)', 259, 'https://rukminim1.flixcart.com/image/880/1056/jv44mfk0/kurta/n/q/5/xxl-sa19kr41c-surhi-original-imafff27pxzhvxb4.jpeg?q=50', 'female', NULL, NULL),
+(31, 'Kanvir', 'Women Solid Pure Cotton Frontslit Kurta  (Yellow)', 299, 'https://rukminim1.flixcart.com/image/880/1056/kgb5rbk0-0/kurta/t/y/l/xl-canvir-straight-canvir-original-imafwkzsqhswpvss.jpeg?q=50', 'female', NULL, NULL),
+(32, 'Harivastra', 'Women Solid Cotton Blend Straight Kurta  (Grey)', 289, 'https://rukminim1.flixcart.com/image/880/1056/k1tm1e80/kurti/9/t/g/m-kurti-gray-thadoli-original-imafgjyhvykxezvt.jpeg?q=50', 'female', NULL, NULL),
+(33, 'Manisha', 'Women Self Design Rayon Straight Kurta  (Purple)', 349, 'https://rukminim1.flixcart.com/image/880/1056/kfcv6vk0-0/kurta/2/g/y/xl-kurta-light-purple-r-manisha-original-imafvu4cdnfzbsqh.jpeg?q=50', 'female', NULL, NULL),
+(34, 'Glorious', 'Women Printed Rayon Straight Kurta  (Yellow)', 466, 'https://rukminim1.flixcart.com/image/880/1056/kgl5ua80-0/kurta/i/f/i/xxl-psk117-glorious-original-imafwsexqgtgjyhc.jpeg?q=50', 'female', NULL, NULL),
+(35, 'here$now', 'Women Printed Pure Cotton Frontslit Kurta  (Beige)', 664, 'https://rukminim1.flixcart.com/image/880/1056/juu4jgw0/kurta/d/v/h/l-2295972-here-now-original-imaffuyc5xzfw8mh.jpeg?q=50', 'female', NULL, NULL),
+(36, 'Anouk', 'Women Printed Pure Cotton Straight Kurta  (Dark Blue)', 499, 'https://rukminim1.flixcart.com/image/880/1056/k7dnonk0/kurta/f/v/u/l-11201612-anouk-original-imafpmuspuzxxemc.jpeg?q=50', 'female', NULL, NULL),
+(37, 'See Designs', 'Women Printed Cotton Blend Straight Kurta  (Blue)', 649, 'https://rukminim1.flixcart.com/image/880/1056/kkcwo7k0/kurta/j/i/g/s-sd1551-see-designs-original-imafzpz7uhcknwk7.jpeg?q=50', 'female', NULL, NULL),
+(38, 'SAARA', 'Women Printed Pure Cotton Straight Kurta  (Yellow)', 479, 'https://rukminim1.flixcart.com/image/880/1056/kplisnk0/kurta/p/i/k/l-344k994-saara-original-imag3sp9fyqkzzqm.jpeg?q=50', 'female', NULL, NULL),
+(39, 'Stylum', 'Women Striped Pure Cotton Straight Kurta  (Green, Gold)', 449, 'https://rukminim1.flixcart.com/image/880/1056/kly2aa80/kurta/w/f/c/xl-solomint-stylum-original-imagyy7nptvcqksc.jpeg?q=50', 'female', NULL, NULL),
+(40, 'Shobhangi', 'Women Striped Rayon Frontslit Kurta  (Grey)', 449, 'https://rukminim1.flixcart.com/image/880/1056/kolsscw0/kurta/o/w/u/s-m606-myaza-original-imag3yzfumdpknvz.jpeg?q=50', 'female', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kids`
+--
+
+CREATE TABLE `kids` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `brand` varchar(255) NOT NULL,
+  `price` int(11) NOT NULL,
+  `discount` int(11) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `gender` varchar(255) NOT NULL,
+  `image` text NOT NULL,
+  `popularity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kids`
+--
+
+INSERT INTO `kids` (`id`, `name`, `brand`, `price`, `discount`, `type`, `gender`, `image`, `popularity`) VALUES
+(1, 'Bold N Elegant Sky Blue n Grey Cute Elephant Tail 2pc Baby', 'Bold N Elegant ', 799, 68, 'clothing', 'kids', 'https://m.media-amazon.com/images/I/51EDUD0rYHL._AC_UL320_.jpg', 10),
+(2, 'Presents New Born Baby Summer Wear Baby Clothes', 'Fancy Walas', 375, 40, 'clothing', 'kids', 'https://m.media-amazon.com/images/I/41KRal2lYYL._AC_UL320_.jpg', 6),
+(3, 'Girls Stylish attarctive Colors Cotton Capris(3/4 Th Pant)', 'OCEAN RACE', 719, 35, 'clothing', 'kids', 'https://m.media-amazon.com/images/I/71SFjjQ0sFL._AC_UL320_.jpg', 5),
+(4, 'Hopscotch Boy\'s Cotton and Spandex Empire Waist Full', 'Hopscotch', 828, 30, 'clothing', 'kids', 'https://m.media-amazon.com/images/I/51co63PqfRL._AC_UL320_.jpg', 3),
+(5, 'Boy\'s Regular Fit T-Shirts (Pack of 3)', 'Cloth Theory', 479, 62, 'clothing', 'kids', 'https://m.media-amazon.com/images/I/812g+Y+9V+L._AC_UL320_.jpg', 4),
+(6, 'Boys Clothing, Dress for Kids Boys, Coat, Pant and Shirt', 'Zolario', 949, 45, 'clothing', 'kids', 'https://m.media-amazon.com/images/I/615KPhH8L8L._AC_UL320_.jpg', 6),
+(7, 'Kids Flip Flops for Boys and Girls', 'Coolz', 315, 37, 'shoes', 'kids', 'https://m.media-amazon.com/images/I/71SAPLZV+FS._AC_UL320_.jpg', 5),
+(8, 'Footfun (from Unisex Fashion Sandals', 'Liberty', 389, 35, 'shoes', 'kids', 'https://m.media-amazon.com/images/I/81ESH2WYNcL._AC_UL320_.jpg', 3),
+(9, 'Boy\'s Running Shoe', 'TRASE', 499, 40, 'shoes', 'kids', 'https://m.media-amazon.com/images/I/71mvQs5v9nL._AC_UL320_.jpg', 4),
+(10, 'Kids & Boys (9319) Casual Sports Running Shoes', 'WORLD WEAR FOOTWEAR', 299, 30, 'shoes', 'kids', 'https://m.media-amazon.com/images/I/71T6RvZxWwL._AC_UL320_.jpg', 6),
+(11, 'M-Series 4 Royal Blue Velcro Sandal for Kids', 'Elecant', 299, 40, 'shoes', 'kids', 'https://m.media-amazon.com/images/I/71x95orbReS._AC_UL320_.jpg', 5),
+(12, 'Grey Girls Sneakers', 'KITTENS', 569, 30, 'shoes', 'kids', 'https://m.media-amazon.com/images/I/71vZfIZHcpL._AC_UL320_.jpg', 3),
+(13, 'kids outdoor sandals SS-0453K', 'Sparx', 799, 45, 'shoes', 'kids', 'https://m.media-amazon.com/images/I/41n37zXe2rS._AC_UL320_.jpg', 4),
+(14, 'Rainbow Cute Plush fleece Unicorn Slippers/Cute Fluffy', 'Sanjis Enterprise', 598, 25, 'shoes', 'kids', 'https://m.media-amazon.com/images/I/419DODdMlsL._AC_UL320_.jpg', 6),
+(15, '36 Pcs. Little Girl Hair Clips Cute Hair Bows Baby Elastic Hair Ties Hair Accessories Ponytail', 'FRATELLO HOME', 499, 28, 'accessories', 'kids', 'https://m.media-amazon.com/images/I/71b1YjxTU2L._AC_UL320_.jpg', 4),
+(16, 'Analog Watches Combo Look Like Pretty for Girls and Women\'s Pack of 3 ', 'PIRASO', 342, 30, 'accessories', 'kids', 'https://m.media-amazon.com/images/I/41VHfaIaApL._AC_UL320_.jpg', 5),
+(17, ' Boy\'s and Girl\'s Cotton Kids Cap A-03 (Multicolour; 4-10 Years)', 'G3E', 325, 45, 'accessories', 'kids', 'https://m.media-amazon.com/images/I/81+qoocnWqL._AC_UL320_.jpg', 6),
+(18, 'Combo bagpacks, Kids Bag , Plush Bags , School Bags for Kid Girl/boy', 'Moroses', 359, 50, 'accessories', 'kids', 'https://m.media-amazon.com/images/I/6135+9D4OyL._AC_UL320_.jpg', 4),
+(19, 'Cotton Reuseable Face Mask (Multicolor, Without Valve, Pack of 5) for Boys, Girls & Kids', 'Cenwell', 499, 20, 'accessories', 'kids', 'https://m.media-amazon.com/images/I/41lQPbw0yUS._AC_UL320_.jpg', 3),
+(20, 'Kids Girls Sunglasses UV Protected Combo for Kids 3 to 8 Years) Sunglasses Pack of 2\r\n', 'DANNILO', 499, 10, 'accessories', 'kids', 'https://m.media-amazon.com/images/I/41t8ko7gWML._AC_UL320_.jpg', 2);
 
 -- --------------------------------------------------------
 
@@ -353,14 +347,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
-(2, 'anonymous', 'abc@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055'),
-(3, 'gurudev singh', 'gurudev620.gs@gmail.com', '3e87a9f59bc94ebb03994b9b03d4f6c3');
-
---
 -- Indexes for dumped tables
 --
 
@@ -368,6 +354,12 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
 -- Indexes for table `clothing`
 --
 ALTER TABLE `clothing`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `kids`
+--
+ALTER TABLE `kids`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -405,6 +397,12 @@ ALTER TABLE `clothing`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
+-- AUTO_INCREMENT for table `kids`
+--
+ALTER TABLE `kids`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
 -- AUTO_INCREMENT for table `men_clothing`
 --
 ALTER TABLE `men_clothing`
@@ -426,7 +424,7 @@ ALTER TABLE `shoes`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

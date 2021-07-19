@@ -1,3 +1,8 @@
+<?php 
+                     include 'config.php';
+                     session_start();
+                     error_reporting(0);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +61,19 @@
                     </ul>
                   </li>
                 </li>
-                  <li class="expand"><div class="cart"><p>KIDS &nbsp;</p><i class="fas fa-caret-down"></i></div></li>
+                  <li class="expand"><div class="cart"><p>KIDS &nbsp;</p><i class="fas fa-caret-down"></i></div>
+                  <ul>
+                    <li>
+                      <a href="#">footwears</a>
+                    </li>
+                    <li>
+                          <a href="#">clothing</a>
+                      </li> 
+                      <li>
+                        <a href="#">accessories</a>
+                      </li>               
+                  </ul>
+                </li>
                   <!-- </ul>
               </div> -->
                 <a href="cart.php" class="cart">
@@ -68,9 +85,6 @@
                 <a href="login.php"  class="signin">
                    <p id="profilename">
                      <?php 
-                     include 'config.php';
-                     session_start();
-                     error_reporting(0);
                      if (isset($_SESSION['username'])) {
 		                  echo $_SESSION['username'];?>
                       <style>
@@ -351,7 +365,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/owl.carousel.min.js"></script>
     <script src="https://use.fontawesome.com/826a7e3dce.js"></script>
     <script src="./script.js"></script>
-
-    
+<!-- ----------------------------footer----------------------------------------------- -->
+    <!-- <footer class="footer">
+    <div style="display:flex;">
+      <div class="contact">
+        <h3 class="white">CONTACT US</h3><br>
+        <p style="line-height:1.6;">
+        Chandigarh University<br>
+        Mohali, Punjab<br>
+        Email: e-fashionstore@gamil.com<br>
+        Phone Number: 443-498-7493<br>
+        Mobile Number: +91 9993227639<br></p>
+      </div>
+      <br>
+      <div class="social-media">
+        <h3>Social Media<h3><br>
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-linkedin"></i>
+      </div>
+    </div>
+      <hr style="height:1px;">
+      <p style="width:100%;text-align:center;">privacy policy   |   copyright @2021</p><br>
+    </footer> -->
 </body>
 </html>
