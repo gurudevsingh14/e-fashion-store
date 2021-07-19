@@ -25,7 +25,7 @@ To Download XAMPP server visit [here](https://www.apachefriends.org/index.html)
    Enter Database name and press on Create button
    ![image not found](https://www.android-examples.com/wp-content/uploads/2015/12/create-database.png)
 5. Open your config.php file and enter your database name in `$database = ""` variable and save changes.
-6. Now open url `localhost` on your browser.
+6. Now open url `localhost` on your browser.<br>
    Open cloned repo folder
    ![image not found](./img/page.jpg)
 7. Website will be loaded immedialtely.
